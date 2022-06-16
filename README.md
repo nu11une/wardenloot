@@ -13,21 +13,21 @@ The intended way to obtain the items in this mod is to kill The Warden (hence th
 - Looting an Ancient City chest (Rare)
 - Mining a Sculk block (Very rare)
 
-<img src="https://media.discordapp.net/attachments/597633988802117642/986801681058652160/imbued_ingot_craft.png"/>
+<img src="https://media.discordapp.net/attachments/597633988802117642/986801681058652160/imbued_ingot_craft.png" width="350"/>
 
 **Imbued Ingots** can be combined with Netherite tools to make **Imbued Tools**
 
-<img src="https://media.discordapp.net/attachments/597633988802117642/986801626339737640/tool_crafting.png"/>
+<img src="https://media.discordapp.net/attachments/597633988802117642/986801626339737640/tool_crafting.png" width="350"/>
 
 ### Warden Heart
 A **Warden Heart** can be obtained in two ways:
 - Killing The Warden (Always drops one)
 - Surrounding a diamond with four **Imbued Ingots** and four Echo Shards
 
-<img src="https://media.discordapp.net/attachments/597633988802117642/986801626130042900/heart_crafting.png"/>
+<img src="https://media.discordapp.net/attachments/597633988802117642/986801626130042900/heart_crafting.png" width="350"/>
 
 **Warden Hearts** can be combined with Netherite armor to make the **Depth-Keeper's Armor Set**
 
-<img src="https://media.discordapp.net/attachments/597633988802117642/986801657331466300/armor_crafting.png"/>
+<img src="https://media.discordapp.net/attachments/597633988802117642/986801657331466300/armor_crafting.png" width="350"/>
 
 Wearing the full **Depth-Keeper's Armor Set** will make The Warden fear you.
