@@ -4,17 +4,16 @@
   "version": "${version}",
 
   "name": "Warden Loot",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "Adds awesome loot centering around the Warden and the Ancient City",
   "authors": [
     "nu11une"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/nu11une/wardenloot"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "Apache-2.0",
+  "icon": "assets/wardenloot/textures/item/sculk_chestplate.png",
 
   "environment": "*",
   "entrypoints": {

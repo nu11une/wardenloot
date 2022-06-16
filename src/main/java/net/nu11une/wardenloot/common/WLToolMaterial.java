@@ -1,14 +1,13 @@
-package net.nu11une.wardenloot.item.material;
+package net.nu11une.wardenloot.common;
 
 import java.util.function.Supplier;
-
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Lazy;
-import net.nu11une.wardenloot.item.WLItems;
+import net.nu11une.wardenloot.core.WLItems;
 
 public enum WLToolMaterial implements ToolMaterial {
-    SCULKERITE(4, 3070, 11.0F, 6.0F, 15, () -> {
+    SCULKERITE(4, 3070, 12.0F, 8.0F, 20, () -> {
         return Ingredient.ofItems(WLItems.SCULK_INGOT);
     });
 
@@ -49,6 +48,6 @@ public enum WLToolMaterial implements ToolMaterial {
     }
 
     public Ingredient getRepairIngredient() {
-        return (Ingredient)this.repairIngredient.get();
+        return this.repairIngredient.get();
     }
 }

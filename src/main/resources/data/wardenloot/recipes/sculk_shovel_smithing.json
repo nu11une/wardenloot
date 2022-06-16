@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "wardenloot:sculk_ingot"
+  },
+  "base": {
+    "item": "minecraft:netherite_shovel"
+  },
+  "result": {
+    "item": "wardenloot:sculk_shovel"
+  }
+}

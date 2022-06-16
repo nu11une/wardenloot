@@ -1,14 +1,15 @@
 {
-  "item.wardenloot.sculk_ingot": "Sculk Ingot",
-  "item.wardenloot.sculk_soul": "Sculk Soul",
+  "item.wardenloot.sculk_ingot": "Imbued Ingot",
+  "item.wardenloot.sculk_soul": "Consumed Soul",
   "item.wardenloot.warden_heart": "Warden Heart",
-  "item.wardenloot.sculk_helmet": "Sculk Helmet",
-  "item.wardenloot.sculk_chestplate": "Sculk Chestplate",
-  "item.wardenloot.sculk_leggings": "Sculk Leggings",
-  "item.wardenloot.sculk_boots": "Sculk Boots",
-  "item.wardenloot.sculk_sword": "Sculk Sword",
-  "item.wardenloot.sculk_pickaxe": "Sculk Pickaxe",
-  "item.wardenloot.sculk_axe": "Sculk Axe",
-  "item.wardenloot.sculk_hoe": "Sculk Hoe",
-  "item.wardenloot.sculk_shovel": "Sculk Shovel"
+  "item.wardenloot.sculk_helmet": "Depth-Keeper's Helmet",
+  "item.wardenloot.sculk_chestplate": "Depth-Keeper's Heartplate",
+  "item.wardenloot.sculk_leggings": "Depth-Keeper's Grieves",
+  "item.wardenloot.sculk_boots": "Depth-Keeper's Boots",
+  "item.wardenloot.sculk_sword": "Imbued Sword",
+  "item.wardenloot.sculk_pickaxe": "Imbued Pickaxe",
+  "item.wardenloot.sculk_axe": "Imbued Axe",
+  "item.wardenloot.sculk_hoe": "Imbued Hoe",
+  "item.wardenloot.sculk_shovel": "Imbued Shovel",
+  "itemGroup.wardenloot.wardenloot_group": "Warden Loot"
 }

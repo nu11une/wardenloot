@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "wardenloot:sculk_soul"
+    },
+    "$": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#$#",
+    " # "
+  ],
+  "result": {
+    "item": "wardenloot:sculk_ingot"
+  }
+}

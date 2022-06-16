@@ -1,4 +1,4 @@
-package net.nu11une.wardenloot.item;
+package net.nu11une.wardenloot.core;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
@@ -6,9 +6,9 @@ import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.nu11une.wardenloot.WardenLoot;
-import net.nu11une.wardenloot.item.extension.*;
-import net.nu11une.wardenloot.item.material.WLArmorMaterial;
-import net.nu11une.wardenloot.item.material.WLToolMaterial;
+import net.nu11une.wardenloot.common.*;
+import net.nu11une.wardenloot.common.WLArmorMaterial;
+import net.nu11une.wardenloot.common.WLToolMaterial;
 
 public class WLItems {
 
@@ -42,17 +42,17 @@ public class WLItems {
     }
 
     static {
-        SCULK_INGOT = new Item(new FabricItemSettings());
-        SCULK_SOUL = new Item(new FabricItemSettings());
-        WARDEN_HEART = new Item(new FabricItemSettings());
-        SCULK_HELMET = new WLArmorItem(WLArmorMaterial.SCULKERITE, EquipmentSlot.HEAD, new FabricItemSettings().fireproof());
-        SCULK_CHESTPLATE = new WLArmorItem(WLArmorMaterial.SCULKERITE, EquipmentSlot.CHEST, new FabricItemSettings().fireproof());
-        SCULK_LEGGINGS = new WLArmorItem(WLArmorMaterial.SCULKERITE, EquipmentSlot.LEGS, new FabricItemSettings().fireproof());
-        SCULK_BOOTS = new WLArmorItem(WLArmorMaterial.SCULKERITE, EquipmentSlot.FEET, new FabricItemSettings().fireproof());
-        SCULK_SWORD = new WLSwordItem(WLToolMaterial.SCULKERITE, 4, 1.6F, new FabricItemSettings().fireproof());
-        SCULK_PICKAXE = new WLPickaxeItem(WLToolMaterial.SCULKERITE, 2, 1, new FabricItemSettings().fireproof());
-        SCULK_AXE = new WLAxeItem(WLToolMaterial.SCULKERITE, 6, 1, new FabricItemSettings().fireproof());
-        SCULK_HOE = new WLHoeItem(WLToolMaterial.SCULKERITE, -3, 4, new FabricItemSettings().fireproof());
-        SCULK_SHOVEL = new WLShovelItem(WLToolMaterial.SCULKERITE, 2, 1, new FabricItemSettings().fireproof());
+        SCULK_INGOT = new Item(new FabricItemSettings().group(WardenLoot.WL_GROUP));
+        SCULK_SOUL = new Item(new FabricItemSettings().group(WardenLoot.WL_GROUP));
+        WARDEN_HEART = new Item(new FabricItemSettings().group(WardenLoot.WL_GROUP));
+        SCULK_HELMET = new WLArmorItem(WLArmorMaterial.SCULKERITE, EquipmentSlot.HEAD, new FabricItemSettings().fireproof().group(WardenLoot.WL_GROUP));
+        SCULK_CHESTPLATE = new WLArmorItem(WLArmorMaterial.SCULKERITE, EquipmentSlot.CHEST, new FabricItemSettings().fireproof().group(WardenLoot.WL_GROUP));
+        SCULK_LEGGINGS = new WLArmorItem(WLArmorMaterial.SCULKERITE, EquipmentSlot.LEGS, new FabricItemSettings().fireproof().group(WardenLoot.WL_GROUP));
+        SCULK_BOOTS = new WLArmorItem(WLArmorMaterial.SCULKERITE, EquipmentSlot.FEET, new FabricItemSettings().fireproof().group(WardenLoot.WL_GROUP));
+        SCULK_SWORD = new WLSwordItem(WLToolMaterial.SCULKERITE, 3, -2.4F, new FabricItemSettings().fireproof().group(WardenLoot.WL_GROUP));
+        SCULK_PICKAXE = new WLPickaxeItem(WLToolMaterial.SCULKERITE, 0, -3, new FabricItemSettings().fireproof().group(WardenLoot.WL_GROUP));
+        SCULK_AXE = new WLAxeItem(WLToolMaterial.SCULKERITE, 5, -3, new FabricItemSettings().fireproof().group(WardenLoot.WL_GROUP));
+        SCULK_HOE = new WLHoeItem(WLToolMaterial.SCULKERITE, -4, 0, new FabricItemSettings().fireproof().group(WardenLoot.WL_GROUP));
+        SCULK_SHOVEL = new WLShovelItem(WLToolMaterial.SCULKERITE, 1, -3, new FabricItemSettings().fireproof().group(WardenLoot.WL_GROUP));
     }
 }

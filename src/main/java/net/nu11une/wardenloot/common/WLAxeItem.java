@@ -1,4 +1,4 @@
-package net.nu11une.wardenloot.item.extension;
+package net.nu11une.wardenloot.common;
 
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ToolMaterial;
