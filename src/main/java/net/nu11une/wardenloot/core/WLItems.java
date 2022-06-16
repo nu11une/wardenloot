@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 import net.nu11une.wardenloot.WardenLoot;
 import net.nu11une.wardenloot.common.*;
@@ -44,7 +45,7 @@ public class WLItems {
     static {
         SCULK_INGOT = new Item(new FabricItemSettings().group(WardenLoot.WL_GROUP));
         SCULK_SOUL = new Item(new FabricItemSettings().group(WardenLoot.WL_GROUP));
-        WARDEN_HEART = new Item(new FabricItemSettings().group(WardenLoot.WL_GROUP));
+        WARDEN_HEART = new Item(new FabricItemSettings().group(WardenLoot.WL_GROUP).rarity(Rarity.UNCOMMON));
         SCULK_HELMET = new WLArmorItem(WLArmorMaterial.SCULKERITE, EquipmentSlot.HEAD, new FabricItemSettings().fireproof().group(WardenLoot.WL_GROUP));
         SCULK_CHESTPLATE = new WLArmorItem(WLArmorMaterial.SCULKERITE, EquipmentSlot.CHEST, new FabricItemSettings().fireproof().group(WardenLoot.WL_GROUP));
         SCULK_LEGGINGS = new WLArmorItem(WLArmorMaterial.SCULKERITE, EquipmentSlot.LEGS, new FabricItemSettings().fireproof().group(WardenLoot.WL_GROUP));

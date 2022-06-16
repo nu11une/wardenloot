@@ -26,7 +26,7 @@ public class WLLootTableModifier {
                 tableBuilder.pool(soulPoolBonus);
             }
             if(Blocks.SCULK.getLootTableId().equals(id)) {
-                LootPool.Builder pool = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(BinomialLootNumberProvider.create(1, 0.004F));
+                LootPool.Builder pool = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(BinomialLootNumberProvider.create(1, 0.006F));
                 tableBuilder.pool(pool);
             }
             if(AC_CHEST_ID.equals(id)) {
