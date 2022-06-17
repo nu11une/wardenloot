@@ -11,6 +11,7 @@ import net.minecraft.util.Unit;
 import net.minecraft.world.World;
 import net.minecraft.world.event.listener.VibrationListener;
 import net.nu11une.wardenloot.common.WLArmorItem;
+import net.nu11une.wardenloot.util.ModConfigs;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -29,13 +30,20 @@ public abstract class WardenEntityMixin extends HostileEntity implements Vibrati
         LivingEntity target = warden.getTarget();
         if(warden.getDamageTracker().getBiggestAttacker() != target && target instanceof PlayerEntity){
             int armorCount = 0;
+            int armorTotal = 0;
+            if(ModConfigs.REGISTER_CHESTPLATE){
+                armorTotal +=1;
+            }
+            if(ModConfigs.REGISTER_HELMET_LEGGINGS_BOOTS){
+                armorTotal += 3;
+            }
             for (ItemStack stack : target.getArmorItems()) {
                 Item item = stack.getItem();
                 if (item instanceof WLArmorItem) {
                     armorCount += 1;
                 }
             }
-            if(armorCount == 4) {
+            if(armorCount == armorTotal && armorCount > 0) {
                 warden.removeSuspect(target);
                 warden.getBrain().remember(MemoryModuleType.DIG_COOLDOWN, Unit.INSTANCE, 0L);
             }

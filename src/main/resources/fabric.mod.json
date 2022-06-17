@@ -4,12 +4,14 @@
   "version": "${version}",
 
   "name": "Warden Loot",
-  "description": "Adds awesome loot centering around the Warden and the Ancient City",
+  "description": "A configurable fabric mod that adds very powerful (and very hard to get) weapons and armor, themed around the Warden and the Ancient City",
   "authors": [
     "nu11une"
   ],
   "contact": {
-    "sources": "https://github.com/nu11une/wardenloot"
+    "sources": "https://github.com/nu11une/wardenloot",
+    "website": "https://www.curseforge.com/minecraft/mc-mods/warden-loot",
+    "issues": "https://github.com/nu11une/wardenloot/issues"
   },
 
   "license": "Apache-2.0",

@@ -5,9 +5,10 @@ import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Lazy;
 import net.nu11une.wardenloot.core.WLItems;
+import net.nu11une.wardenloot.util.ModConfigs;
 
 public enum WLToolMaterial implements ToolMaterial {
-    SCULKERITE(4, 3070, 12.0F, 8.0F, 20, () -> {
+    SCULKERITE(ModConfigs.MINING_LEVEL, ModConfigs.DURABILITY, ModConfigs.MINING_SPEED, ModConfigs.BASE_ATTACK_DAMAGE, 20, () -> {
         return Ingredient.ofItems(WLItems.SCULK_INGOT);
     });
 

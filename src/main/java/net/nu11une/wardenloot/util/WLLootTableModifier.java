@@ -3,13 +3,17 @@ package net.nu11une.wardenloot.util;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.function.EnchantRandomlyLootFunction;
 import net.minecraft.loot.provider.number.BinomialLootNumberProvider;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.util.Identifier;
+import net.nu11une.wardenloot.core.WLEnchants;
 import net.nu11une.wardenloot.core.WLItems;
+import net.nu11une.wardenloot.core.WLWardenHeart;
 
 public class WLLootTableModifier {
 
@@ -18,22 +22,24 @@ public class WLLootTableModifier {
     public static void registerWLLootPools() {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
             if (EntityType.WARDEN.getLootTableId().equals(id)) {
-                LootPool.Builder heartPool = LootPool.builder().with(ItemEntry.builder(WLItems.WARDEN_HEART));
+                LootPool.Builder heartPool = LootPool.builder().with(ItemEntry.builder(WLWardenHeart.WARDEN_HEART));
                 LootPool.Builder soulPool = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(BinomialLootNumberProvider.create(12, 0.5F));
                 LootPool.Builder soulPoolBonus = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(ConstantLootNumberProvider.create(4));
                 tableBuilder.pool(heartPool);
                 tableBuilder.pool(soulPool);
                 tableBuilder.pool(soulPoolBonus);
             }
-            if(Blocks.SCULK.getLootTableId().equals(id)) {
-                LootPool.Builder pool = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(BinomialLootNumberProvider.create(1, 0.006F));
+            if(Blocks.SCULK.getLootTableId().equals(id) && ModConfigs.SCULK_DROPS_SOUL) {
+                LootPool.Builder pool = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(BinomialLootNumberProvider.create(1, ModConfigs.SCULK_SOUL_DROP_CHANCE));
                 tableBuilder.pool(pool);
             }
-            if(AC_CHEST_ID.equals(id)) {
+            if(AC_CHEST_ID.equals(id) && ModConfigs.ANCIENT_CITY_HAS_MOD_LOOT) {
                 LootPool.Builder ingotPool = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_INGOT)).conditionally(RandomChanceLootCondition.builder(0.06F));
                 LootPool.Builder soulPool = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(BinomialLootNumberProvider.create(4, 0.08F));
+                LootPool.Builder enchantPool = LootPool.builder().with(ItemEntry.builder(Items.BOOK).apply(new EnchantRandomlyLootFunction.Builder().add(WLEnchants.WARDEN_DAMAGE))).rolls(BinomialLootNumberProvider.create(3, 0.08F));
                 tableBuilder.pool(ingotPool);
                 tableBuilder.pool(soulPool);
+                tableBuilder.pool(enchantPool);
             }
         });
     }
