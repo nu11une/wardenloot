@@ -39,4 +39,4 @@ The **Bane of the Depth-Keeper** enchantment can be obtained in two ways:
 
 <img src="https://media.discordapp.net/attachments/597633988802117642/987136686775480371/depthkeeper.png" width="350"/>
 
-
+Feel free to include this mod in any modpacks :)
