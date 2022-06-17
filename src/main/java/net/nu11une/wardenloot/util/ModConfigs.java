@@ -48,8 +48,8 @@ public class ModConfigs {
         configs.addKeyValuePair(new Pair<>("tool.base.damage", 8), "float");
         configs.addKeyValuePair(new Pair<>("base.armor.protection", 8), "int");
         configs.addKeyValuePair(new Pair<>("armor.toughness", 4), "float");
-        configs.addKeyValuePair(new Pair<>("register.warden.damage.enchantment", true), "boolean");
-        configs.addKeyValuePair(new Pair<>("warden.damage.enchantment.multiplier", 1), "float");
+        configs.addKeyValuePair(new Pair<>("register.bane.depth.keeper.enchantment", true), "boolean");
+        configs.addKeyValuePair(new Pair<>("bane.depth.keeper.enchantment.damage.multiplier", 1), "float");
         configs.addKeyValuePair(new Pair<>("sculk.drops.soul", true), "boolean");
         configs.addKeyValuePair(new Pair<>("soul.chance.from.sculk", 0.006), "float (chance out of 1)");
         configs.addKeyValuePair(new Pair<>("ancient.city.has.mod.loot", true), "boolean");
@@ -65,8 +65,8 @@ public class ModConfigs {
         BASE_ATTACK_DAMAGE = (float) CONFIG.getOrDefault("tool.base.damage", 8);
         BASE_ARMOR_PROTECTION = CONFIG.getOrDefault("base.armor.protection", 8);
         ARMOR_TOUGHNESS = (float) CONFIG.getOrDefault("armor.toughness", 4);
-        REGISTER_WARDEN_DAMAGE_ENCHANTMENT = CONFIG.getOrDefault("register.warden.damage.enchantment", true);
-        WARDEN_DAMAGE_ENCHANTMENT_MULTIPLIER = (float) CONFIG.getOrDefault("warden.damage.enchantment.multiplier", 1);
+        REGISTER_WARDEN_DAMAGE_ENCHANTMENT = CONFIG.getOrDefault("register.bane.depth.keeper.enchantment", true);
+        WARDEN_DAMAGE_ENCHANTMENT_MULTIPLIER = (float) CONFIG.getOrDefault("bane.depth.keeper.enchantment.damage.multiplier", 1);
         SCULK_DROPS_SOUL = CONFIG.getOrDefault("sculk.drops.soul", true);
         SCULK_SOUL_DROP_CHANCE = (float) CONFIG.getOrDefault("soul.chance.from.sculk", 0.006);
         ANCIENT_CITY_HAS_MOD_LOOT = CONFIG.getOrDefault("ancient.city.has.mod.loot", true);
