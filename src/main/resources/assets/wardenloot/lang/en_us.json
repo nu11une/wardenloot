@@ -14,6 +14,6 @@
   "itemGroup.wardenloot.wardenloot_group": "Warden Loot",
   "enchantment.wardenloot.warden_damage": "Bane of the Depth-Keeper",
   "enchantment.wardenloot.warden_damage.desc": "Increases damage against the Warden",
-  "tooltip.wardenloot.armor.warden_fear": "Bonus: Scourge of the Abyss",
-  "tooltip.wardenloot.armor.warden_fear_set": "Set Bonus: Scourge of the Abyss"
+  "tooltip.wardenloot.armor.warden_fear": "Bonus: Scourge of the Depths",
+  "tooltip.wardenloot.armor.warden_fear_set": "Set Bonus: Scourge of the Depths"
 }
