@@ -37,6 +37,6 @@ The **Bane of the Depth-Keeper** enchantment can be obtained in two ways:
 - Looting an Ancient City chest
 - Using an enchanting table
 
-<img src="https://media.discordapp.net/attachments/597633988802117642/987136686775480371/depthkeeper.png" width="350"/>
+<img src="https://media.discordapp.net/attachments/597633988802117642/987136686775480371/depthkeeper.png"  width="350"/>
 
 
