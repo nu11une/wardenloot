@@ -17,7 +17,7 @@ public class WardenLoot implements ModInitializer {
 
 	public static final ItemGroup WL_GROUP = FabricItemGroupBuilder.build(
 			new Identifier(MOD_ID, "wardenloot_group"),
-			() -> new ItemStack(WLItems.SCULK_INGOT));
+			() -> new ItemStack(WLChestplate.SCULK_CHESTPLATE));
 
 	@Override
 	public void onInitialize() {
