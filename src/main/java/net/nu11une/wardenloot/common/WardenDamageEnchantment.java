@@ -14,9 +14,9 @@ public class WardenDamageEnchantment extends DamageEnchantment {
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        if (target instanceof LivingEntity livingEntity && !user.world.isClient()) {
+        if (target instanceof LivingEntity livingEntity) {
             if(livingEntity.getType().equals(EntityType.WARDEN)) {
-                target.damage(DamageSource.sting(user), level * ModConfigs.WARDEN_DAMAGE_ENCHANTMENT_MULTIPLIER);
+                target.damage(DamageSource.sting(user), (10 + (level * 5)) * ModConfigs.WARDEN_DAMAGE_ENCHANTMENT_MULTIPLIER);
             }
         }
     }
