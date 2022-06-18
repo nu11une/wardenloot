@@ -16,5 +16,6 @@
   "enchantment.wardenloot.warden_damage.desc": "Increases damage against the Warden",
   "tooltip.wardenloot.armor.warden_fear": "Bonus: Scourge of the Depths",
   "tooltip.wardenloot.armor.warden_fear_set": "Set Bonus: Scourge of the Depths",
-  "tooltip.wardenloot.armor.darkness_immunity": "Bonus: Immunity from Darkness"
+  "tooltip.wardenloot.armor.darkness_immunity": "Immunity from Darkness",
+  "tooltip.wardenloot.weapon.inflict_darkness": "Inflicts Darkness"
 }
