@@ -8,6 +8,7 @@ import net.minecraft.entity.mob.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Unit;
 import net.minecraft.world.World;
 import net.minecraft.world.event.listener.VibrationListener;
@@ -19,12 +20,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(WardenEntity.class)
-public abstract class WardenEntityMixin extends HostileEntity implements VibrationListener.Callback {
-
-    protected WardenEntityMixin(EntityType<? extends HostileEntity> entityType, World world) {
-        super(entityType, world);
-    }
-
+public abstract class WardenEntityMixin {
     @Inject(method = "tick", at = @At("HEAD"), cancellable = true)
     private void WardenEntity_tick(CallbackInfo ci) {
         WardenEntity warden = (WardenEntity) (Object) this;
