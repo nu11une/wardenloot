@@ -4,7 +4,8 @@
   "package": "net.nu11une.wardenloot.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "WardenEntityMixin"
+    "WardenEntityMixin",
+    "PlayerEntityMixin"
   ],
   "client": [
   ],

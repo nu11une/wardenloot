@@ -7,6 +7,7 @@ import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
+import net.nu11une.wardenloot.core.WLHelmet;
 import net.nu11une.wardenloot.util.ModConfigs;
 import net.nu11une.wardenloot.util.WLToolTip;
 import org.jetbrains.annotations.Nullable;
@@ -24,6 +25,9 @@ public class WLArmorItem extends ArmorItem {
             tooltip.add(WLToolTip.WARDEN_SET_BONUS);
         } else {
             tooltip.add(WLToolTip.WARDEN_BONUS);
+        }
+        if(stack.getItem().equals(WLHelmet.SCULK_HELMET)){
+            tooltip.add(WLToolTip.DARKNESS_IMMUNITY_BONUS);
         }
     }
 }

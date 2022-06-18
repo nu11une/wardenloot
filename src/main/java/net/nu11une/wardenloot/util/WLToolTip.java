@@ -11,4 +11,5 @@ import net.nu11une.wardenloot.WardenLoot;
 public class WLToolTip {
     public static final MutableText WARDEN_SET_BONUS = Text.translatable("tooltip."+ WardenLoot.MOD_ID+".armor.warden_fear_set").formatted(Formatting.DARK_AQUA);
     public static final MutableText WARDEN_BONUS = Text.translatable("tooltip."+ WardenLoot.MOD_ID+".armor.warden_fear").formatted(Formatting.DARK_AQUA);
+    public static final MutableText DARKNESS_IMMUNITY_BONUS = Text.translatable("tooltip."+ WardenLoot.MOD_ID+".armor.darkness_immunity").formatted(Formatting.DARK_BLUE);
 }
