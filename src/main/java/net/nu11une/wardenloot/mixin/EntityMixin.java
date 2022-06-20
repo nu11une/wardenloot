@@ -7,6 +7,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.nu11une.wardenloot.WardenLoot;
+import net.nu11une.wardenloot.util.ModConfigs;
 import net.nu11une.wardenloot.util.TrinketHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -18,7 +19,7 @@ public class EntityMixin {
 
     @Inject(method = "playSound", at = @At("HEAD"), cancellable = true)
     public void playSoundCallback(SoundEvent sound, float volume, float pitch, CallbackInfo ci) {
-        if(WardenLoot.isModLoaded("trinkets")){
+        if(WardenLoot.isModLoaded("trinkets") && !ModConfigs.TRINKET_COSMETIC_ONLY){
             Entity entity = (Entity) (Object) this;
             if(entity instanceof LivingEntity){
                 LivingEntity livingEntity = (LivingEntity) (Object) this;

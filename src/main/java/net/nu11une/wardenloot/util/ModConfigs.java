@@ -30,6 +30,10 @@ public class ModConfigs {
     public static boolean SCULK_DROPS_SOUL;
     public static float SCULK_SOUL_DROP_CHANCE;
     public static boolean ANCIENT_CITY_HAS_MOD_LOOT;
+    public static boolean WARDEN_DROPS;
+
+    // Misc
+    public static boolean TRINKET_COSMETIC_ONLY;
 
     public static void registerConfigs() {
         configs = new ModConfigProvider();
@@ -53,6 +57,8 @@ public class ModConfigs {
         configs.addKeyValuePair(new Pair<>("sculk.drops.soul", true), "boolean");
         configs.addKeyValuePair(new Pair<>("soul.chance.from.sculk", 0.006), "float (chance out of 1)");
         configs.addKeyValuePair(new Pair<>("ancient.city.has.mod.loot", true), "boolean");
+        configs.addKeyValuePair(new Pair<>("warden.drops.loot", true), "boolean");
+        configs.addKeyValuePair(new Pair<>("trinket.cosmetic.only", false), "boolean");
     }
 
     private static void assignConfigs() {
@@ -70,6 +76,8 @@ public class ModConfigs {
         SCULK_DROPS_SOUL = CONFIG.getOrDefault("sculk.drops.soul", true);
         SCULK_SOUL_DROP_CHANCE = (float) CONFIG.getOrDefault("soul.chance.from.sculk", 0.006);
         ANCIENT_CITY_HAS_MOD_LOOT = CONFIG.getOrDefault("ancient.city.has.mod.loot", true);
-        System.out.println("All " + configs.getConfigsList().size() + " have been set properly");
+        WARDEN_DROPS = CONFIG.getOrDefault("warden.drops.loot", true);
+        TRINKET_COSMETIC_ONLY = CONFIG.getOrDefault("trinket.cosmetic.only", false);
+        System.out.println("["+WardenLoot.MOD_ID+"] " + configs.getConfigsList().size() + " configuration options have been set properly");
     }
 }
