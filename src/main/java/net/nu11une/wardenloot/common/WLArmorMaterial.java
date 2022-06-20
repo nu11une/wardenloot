@@ -7,7 +7,7 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Lazy;
-import net.nu11une.wardenloot.core.WLItems;
+import net.nu11une.wardenloot.register.WLItems;
 import net.nu11une.wardenloot.util.ModConfigs;
 
 public enum WLArmorMaterial implements ArmorMaterial {

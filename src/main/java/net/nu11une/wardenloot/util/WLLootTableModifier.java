@@ -11,9 +11,11 @@ import net.minecraft.loot.function.EnchantRandomlyLootFunction;
 import net.minecraft.loot.provider.number.BinomialLootNumberProvider;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.util.Identifier;
-import net.nu11une.wardenloot.core.WLEnchants;
-import net.nu11une.wardenloot.core.WLItems;
-import net.nu11une.wardenloot.core.WLWardenHeart;
+import net.nu11une.wardenloot.WardenLoot;
+import net.nu11une.wardenloot.register.WLEnchants;
+import net.nu11une.wardenloot.register.WLItems;
+import net.nu11une.wardenloot.register.WLTrinketItems;
+import net.nu11une.wardenloot.register.WLWardenHeart;
 
 public class WLLootTableModifier {
 
@@ -36,10 +38,18 @@ public class WLLootTableModifier {
             if(AC_CHEST_ID.equals(id) && ModConfigs.ANCIENT_CITY_HAS_MOD_LOOT) {
                 LootPool.Builder ingotPool = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_INGOT)).conditionally(RandomChanceLootCondition.builder(0.06F));
                 LootPool.Builder soulPool = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(BinomialLootNumberProvider.create(4, 0.08F));
-                LootPool.Builder enchantPool = LootPool.builder().with(ItemEntry.builder(Items.BOOK).apply(new EnchantRandomlyLootFunction.Builder().add(WLEnchants.WARDEN_DAMAGE))).rolls(BinomialLootNumberProvider.create(3, 0.08F));
+                LootPool.Builder enchantPool = LootPool.builder().with(ItemEntry.builder(Items.BOOK).apply(new EnchantRandomlyLootFunction.Builder().add(WLEnchants.WARDEN_DAMAGE))).rolls(BinomialLootNumberProvider.create(3, 0.03F));
                 tableBuilder.pool(ingotPool);
                 tableBuilder.pool(soulPool);
                 tableBuilder.pool(enchantPool);
+            }
+            if(AC_CHEST_ID.equals(id) && WardenLoot.isModLoaded("trinkets")) {
+                LootPool.Builder pool = LootPool.builder().with(ItemEntry.builder(WLTrinketItems.WARDEN_EARS_TRINKET)).conditionally(RandomChanceLootCondition.builder(0.02F));
+                tableBuilder.pool(pool);
+            }
+            if (EntityType.WARDEN.getLootTableId().equals(id) && WardenLoot.isModLoaded("trinkets")) {
+                LootPool.Builder pool = LootPool.builder().with(ItemEntry.builder(WLTrinketItems.WARDEN_EARS_TRINKET)).rolls(BinomialLootNumberProvider.create(1, 0.3F));
+                tableBuilder.pool(pool);
             }
         });
     }

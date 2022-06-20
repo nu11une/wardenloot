@@ -2,9 +2,10 @@ package net.nu11une.wardenloot;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.nu11une.wardenloot.core.*;
+import net.nu11une.wardenloot.register.*;
 import net.nu11une.wardenloot.util.ModConfigs;
 import net.nu11une.wardenloot.util.WLLootTableModifier;
 import org.slf4j.Logger;
@@ -19,6 +20,10 @@ public class WardenLoot implements ModInitializer {
 			new Identifier(MOD_ID, "wardenloot_group"),
 			() -> new ItemStack(WLChestplate.SCULK_CHESTPLATE));
 
+
+	public static boolean isModLoaded(String modId) {
+		return FabricLoader.getInstance().isModLoaded(modId);
+	}
 	@Override
 	public void onInitialize() {
 		ModConfigs.registerConfigs();
@@ -41,6 +46,9 @@ public class WardenLoot implements ModInitializer {
 		}
 		if(ModConfigs.REGISTER_WARDEN_DAMAGE_ENCHANTMENT){
 			WLEnchants.registerWLEnchants();
+		}
+		if(isModLoaded("trinkets")){
+			WLTrinketItems.registerTrinketItems();
 		}
 		LOGGER.info("["+MOD_ID+"] Mod Initialized");
 	}

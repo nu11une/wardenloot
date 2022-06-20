@@ -4,7 +4,7 @@ import java.util.function.Supplier;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Lazy;
-import net.nu11une.wardenloot.core.WLItems;
+import net.nu11une.wardenloot.register.WLItems;
 import net.nu11une.wardenloot.util.ModConfigs;
 
 public enum WLToolMaterial implements ToolMaterial {

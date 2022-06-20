@@ -16,7 +16,7 @@ public class WardenDamageEnchantment extends DamageEnchantment {
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
         if (target instanceof LivingEntity livingEntity) {
             if(livingEntity.getType().equals(EntityType.WARDEN)) {
-                target.damage(DamageSource.sting(user), (10 + (level * 5)) * ModConfigs.WARDEN_DAMAGE_ENCHANTMENT_MULTIPLIER);
+                target.damage(DamageSource.sting(user), (10 + (level * 6)) * ModConfigs.WARDEN_DAMAGE_ENCHANTMENT_MULTIPLIER);
             }
         }
     }
@@ -33,5 +33,15 @@ public class WardenDamageEnchantment extends DamageEnchantment {
 
     @Override public boolean canAccept(Enchantment other) {
         return !(other instanceof WardenDamageEnchantment);
+    }
+
+    @Override
+    public boolean isAvailableForEnchantedBookOffer() {
+        return false;
+    }
+
+    @Override
+    public boolean isAvailableForRandomSelection() {
+        return false;
     }
 }

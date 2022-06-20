@@ -15,12 +15,15 @@
   },
 
   "license": "Apache-2.0",
-  "icon": "assets/wardenloot/textures/sculk_chestplate.gif",
+  "icon": "assets/wardenloot/textures/wardenloot_icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
       "net.nu11une.wardenloot.WardenLoot"
+    ],
+    "client": [
+      "net.nu11une.wardenloot.client.WardenLootClient"
     ]
   },
   "mixins": [

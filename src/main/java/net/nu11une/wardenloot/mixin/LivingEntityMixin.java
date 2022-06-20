@@ -5,7 +5,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.nu11une.wardenloot.core.WLHelmet;
+import net.nu11une.wardenloot.register.WLHelmet;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -16,23 +16,21 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class LivingEntityMixin {
     @Inject(method = "setStatusEffect", at = @At("TAIL"), cancellable = true)
     public void setStatusEffectCallback(CallbackInfo ci) {
-        LivingEntity entity = (LivingEntity) (Object) this;
-        setEffect(entity);
+        setEffect();
     }
 
     @Inject(method = "addStatusEffect", at = @At("TAIL"), cancellable = true)
     public void addStatusEffectCallback(CallbackInfoReturnable<Boolean> cir) {
-        LivingEntity entity = (LivingEntity) (Object) this;
-        setEffect(entity);
+        setEffect();
     }
 
     @Inject(method = "onEquipStack", at = @At("HEAD"), cancellable = true)
     public void onEquipStackCallback(CallbackInfo ci) {
-        LivingEntity entity = (LivingEntity) (Object) this;
-        setEffect(entity);
+        setEffect();
     }
 
-    public void setEffect(LivingEntity entity) {
+    public void setEffect() {
+        LivingEntity entity = (LivingEntity) (Object) this;
         if(entity instanceof PlayerEntity){
             for (ItemStack stack : entity.getArmorItems()) {
                 Item item = stack.getItem();

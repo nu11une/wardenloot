@@ -7,7 +7,7 @@ import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
-import net.nu11une.wardenloot.core.WLHelmet;
+import net.nu11une.wardenloot.register.WLHelmet;
 import net.nu11une.wardenloot.util.ModConfigs;
 import net.nu11une.wardenloot.util.WLToolTip;
 import org.jetbrains.annotations.Nullable;

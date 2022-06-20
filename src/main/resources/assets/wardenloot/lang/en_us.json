@@ -17,5 +17,8 @@
   "tooltip.wardenloot.armor.warden_fear": "Bonus: Scourge of the Depths",
   "tooltip.wardenloot.armor.warden_fear_set": "Set Bonus: Scourge of the Depths",
   "tooltip.wardenloot.armor.darkness_immunity": "Immunity from Darkness",
-  "tooltip.wardenloot.weapon.inflict_darkness": "Inflicts Darkness"
+  "tooltip.wardenloot.weapon.inflict_darkness": "Inflicts Darkness",
+  "tooltip.wardenloot.trinket.warden_ears": "Locate nearby mobs through vibrations",
+  "item.wardenloot.warden_ears_trinket": "Warden Tendrils",
+  "item.wardenloot.warden_enchanted_book": "Imbued Tome"
 }

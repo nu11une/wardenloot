@@ -17,6 +17,10 @@ repositories {
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
 	maven {url "https://www.cursemaven.com/"}
+	maven {
+		name = 'Ladysnake Mods'
+		url = 'https://ladysnake.jfrog.io/artifactory/mods'
+	}
 }
 
 dependencies {
@@ -30,6 +34,8 @@ dependencies {
 
 	// Animated armor dependency
 	modImplementation "curse.maven:moremcmeta-506079:${project.moremcmeta_version}"
+	modImplementation "curse.maven:trinkets-341284:${project.trinkets_version}"
+	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-api:5.0.0-beta.1"
 }
 
 processResources {

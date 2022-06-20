@@ -1,4 +1,4 @@
-package net.nu11une.wardenloot.core;
+package net.nu11une.wardenloot.register;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
@@ -7,7 +7,6 @@ import net.minecraft.util.registry.Registry;
 import net.nu11une.wardenloot.WardenLoot;
 import net.nu11une.wardenloot.common.WLArmorItem;
 import net.nu11une.wardenloot.common.WLArmorMaterial;
-import net.nu11une.wardenloot.util.WLToolTip;
 
 public class WLChestplate {
     public static WLArmorItem SCULK_CHESTPLATE;

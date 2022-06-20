@@ -21,7 +21,7 @@ public class WLAxeItem extends AxeItem {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        target.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 200), attacker);
+        target.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 200, 1, false, false, false), attacker);
         return super.postHit(stack, target, attacker);
     }
 

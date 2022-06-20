@@ -1,4 +1,4 @@
-package net.nu11une.wardenloot.core;
+package net.nu11une.wardenloot.register;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
