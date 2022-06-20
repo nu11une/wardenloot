@@ -30,7 +30,7 @@ A **Warden Heart** can be obtained in two ways:
 
 <img src="https://media.discordapp.net/attachments/597633988802117642/986801657331466300/armor_crafting.png" width="350"/>
 
-Wearing the full **Depth-Keeper's Armor Set** will give you the **Sourge of the Depths** bonus, making the Warden fear you.
+Wearing the **Depth-Keeper's Helmet** will give you immunity to Darkness, wearing the full **Depth-Keeper's Armor Set** will give you the **Scourge of the Depths** bonus, making the Warden fear you.
 
 ### Bane of the Depth-Keeper
 The **Bane of the Depth-Keeper** enchantment can be obtained in two ways:
@@ -38,5 +38,10 @@ The **Bane of the Depth-Keeper** enchantment can be obtained in two ways:
 - Using an enchanting table
 
 <img src="https://media.discordapp.net/attachments/597633988802117642/987136686775480371/depthkeeper.png" width="350"/>
+
+### Warden Tendrils
+The **Warden Tendrils** trinket is an item that allows you to detect and visualize nearby vibrations. Install the [Trinkets](https://modrinth.com/mod/trinkets) mod to unlock this item, then either kill a Warden (30% chance), or loot an Ancient City chest (very rare) to find it.
+
+<img src="https://media.discordapp.net/attachments/597633988802117642/988275242520682496/1.0.4.png" width="350"/>
 
 Feel free to include this mod in any modpacks :)
