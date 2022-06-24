@@ -44,6 +44,7 @@ public class ModConfig implements ConfigData {
         public float soulChanceFromSculk = 0.006F;
         public boolean ancientCityHasModLoot = true;
         public boolean wardenDropsModLoot = true;
+        public boolean wardenKillsDropSoul = true;
     }
 
     @ConfigEntry.Category("misc")
