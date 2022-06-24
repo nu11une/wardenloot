@@ -50,6 +50,9 @@ public class WardenLoot implements ModInitializer {
 		if(config.registry.registerHelmetLeggingsBoots){
 			WLLeggingsBoots.registerArmor();
 		}
+		if(config.registry.registerChestplate){
+			WLChestplate.registerBlood();
+		}
 		WLItems.registerWLItems();
 		if(config.registry.registerHelmetLeggingsBoots || config.registry.registerChestplate){
 			WLWardenHeart.registerHeart();

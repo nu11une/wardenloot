@@ -14,6 +14,9 @@ import net.nu11une.wardenloot.util.ModConfig;
 public enum WLArmorMaterial implements ArmorMaterial {
     SCULKERITE("sculkerite", 43, new int[]{WardenLoot.config.stats.armorBaseProtection, (3 + WardenLoot.config.stats.armorBaseProtection), (6 + WardenLoot.config.stats.armorBaseProtection), WardenLoot.config.stats.armorBaseProtection}, 15, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, WardenLoot.config.stats.armorToughness, 0.15F, () -> {
         return Ingredient.ofItems(WLItems.SCULK_INGOT);
+    }),
+    SCULKERITE_UNCHARGED("sculkerite_uncharged", 43, new int[]{WardenLoot.config.stats.armorBaseProtection, (3 + WardenLoot.config.stats.armorBaseProtection), WardenLoot.config.stats.armorBaseProtection, WardenLoot.config.stats.armorBaseProtection}, 15, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, (WardenLoot.config.stats.armorToughness % 2), 0.05F, () -> {
+        return Ingredient.ofItems(WLItems.SCULK_INGOT);
     });
     private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};
     private final String name;

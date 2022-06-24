@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
 import net.nu11une.wardenloot.WardenLoot;
+import net.nu11une.wardenloot.register.WLChestplate;
 import net.nu11une.wardenloot.register.WLHelmet;
 import net.nu11une.wardenloot.util.ModConfig;
 import net.nu11une.wardenloot.util.WLToolTip;
@@ -26,6 +27,9 @@ public class WLArmorItem extends ArmorItem {
             tooltip.add(WLToolTip.WARDEN_SET_BONUS);
             if(stack.getItem().equals(WLHelmet.SCULK_HELMET)){
                 tooltip.add(WLToolTip.DARKNESS_IMMUNITY_BONUS);
+            }
+            if(stack.getItem().equals(WLChestplate.SCULK_CHESTPLATE_UNCHARGED)){
+                tooltip.add(WLToolTip.COLD_HEART);
             }
         } else {
             tooltip.add(WLToolTip.WARDEN_BONUS);

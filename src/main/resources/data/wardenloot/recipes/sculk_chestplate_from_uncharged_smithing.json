@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "wardenloot:warden_blood"
+  },
+  "base": {
+    "item": "wardenloot:sculk_chestplate_uncharged"
+  },
+  "result": {
+    "item": "wardenloot:sculk_chestplate"
+  }
+}
