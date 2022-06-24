@@ -4,11 +4,12 @@ import java.util.function.Supplier;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Lazy;
+import net.nu11une.wardenloot.WardenLoot;
 import net.nu11une.wardenloot.register.WLItems;
-import net.nu11une.wardenloot.util.ModConfigs;
+import net.nu11une.wardenloot.util.ModConfig;
 
 public enum WLToolMaterial implements ToolMaterial {
-    SCULKERITE(ModConfigs.MINING_LEVEL, ModConfigs.DURABILITY, ModConfigs.MINING_SPEED, ModConfigs.BASE_ATTACK_DAMAGE, 20, () -> {
+    SCULKERITE(WardenLoot.config.stats.toolMiningLevel, WardenLoot.config.stats.toolDurability, WardenLoot.config.stats.toolSpeed, WardenLoot.config.stats.toolBaseDamage, 20, () -> {
         return Ingredient.ofItems(WLItems.SCULK_INGOT);
     });
 

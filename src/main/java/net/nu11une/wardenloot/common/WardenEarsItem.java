@@ -5,6 +5,8 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
+import net.nu11une.wardenloot.WardenLoot;
+import net.nu11une.wardenloot.util.ModConfig;
 import net.nu11une.wardenloot.util.WLToolTip;
 import org.jetbrains.annotations.Nullable;
 
@@ -17,6 +19,8 @@ public class WardenEarsItem extends TrinketItem {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(WLToolTip.TRINKET_ECHOLOCATE);
+        if(!WardenLoot.config.misc.trinketCosmeticOnly){
+            tooltip.add(WLToolTip.TRINKET_ECHOLOCATE);
+        }
     }
 }

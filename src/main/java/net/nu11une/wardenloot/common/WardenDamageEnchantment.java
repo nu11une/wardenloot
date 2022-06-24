@@ -4,7 +4,8 @@ import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.*;
 import net.minecraft.entity.damage.DamageSource;
-import net.nu11une.wardenloot.util.ModConfigs;
+import net.nu11une.wardenloot.WardenLoot;
+import net.nu11une.wardenloot.util.ModConfig;
 
 public class WardenDamageEnchantment extends DamageEnchantment {
 
@@ -16,7 +17,7 @@ public class WardenDamageEnchantment extends DamageEnchantment {
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
         if (target instanceof LivingEntity livingEntity) {
             if(livingEntity.getType().equals(EntityType.WARDEN)) {
-                target.damage(DamageSource.sting(user), (10 + (level * 6)) * ModConfigs.WARDEN_DAMAGE_ENCHANTMENT_MULTIPLIER);
+                target.damage(DamageSource.sting(user), (10 + (level * 6)) * WardenLoot.config.stats.wardenBaneEnchantmentMultiplier);
             }
         }
     }

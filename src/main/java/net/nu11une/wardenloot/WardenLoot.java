@@ -1,12 +1,14 @@
 package net.nu11une.wardenloot;
 
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.nu11une.wardenloot.register.*;
-import net.nu11une.wardenloot.util.ModConfigs;
+import net.nu11une.wardenloot.util.ModConfig;
 import net.nu11une.wardenloot.util.WLLootTableModifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +17,7 @@ import net.minecraft.util.Identifier;
 public class WardenLoot implements ModInitializer {
 	public static final String MOD_ID = "wardenloot";
 	public static final Logger LOGGER = LoggerFactory.getLogger("AIOTs Expanded");
+	public static ModConfig config;
 
 	public static final ItemGroup WL_GROUP = FabricItemGroupBuilder.build(
 			new Identifier(MOD_ID, "wardenloot_group"),
@@ -26,30 +29,32 @@ public class WardenLoot implements ModInitializer {
 	}
 	@Override
 	public void onInitialize() {
-		ModConfigs.registerConfigs();
+		AutoConfig.register(ModConfig.class, JanksonConfigSerializer::new);
+		config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
 		WLLootTableModifier.registerWLLootPools();
-		if(ModConfigs.REGISTER_TOOLS){
+		if(config.registry.registerTools){
 			WLTools.registerTools();
 		}
-		if(ModConfigs.REGISTER_HELMET_LEGGINGS_BOOTS){
+		if(config.registry.registerHelmetLeggingsBoots){
 			WLHelmet.registerHelmet();
 		}
-		if(ModConfigs.REGISTER_CHESTPLATE){
+		if(config.registry.registerChestplate){
 			WLChestplate.registerChestplate();
 		}
-		if(ModConfigs.REGISTER_HELMET_LEGGINGS_BOOTS){
+		if(config.registry.registerHelmetLeggingsBoots){
 			WLLeggingsBoots.registerArmor();
 		}
 		WLItems.registerWLItems();
-		if(ModConfigs.REGISTER_HELMET_LEGGINGS_BOOTS || ModConfigs.REGISTER_CHESTPLATE){
+		if(config.registry.registerHelmetLeggingsBoots || config.registry.registerChestplate){
 			WLWardenHeart.registerHeart();
 		}
-		if(ModConfigs.REGISTER_WARDEN_DAMAGE_ENCHANTMENT){
+		if(config.registry.registerWardenBaneEnchantment){
 			WLEnchants.registerWLEnchants();
 		}
 		if(isModLoaded("trinkets")){
 			WLTrinketItems.registerTrinketItems();
 		}
 		LOGGER.info("["+MOD_ID+"] Mod Initialized");
+		FabricLoader.getInstance().getConfigDir().resolve("wardenloot.properties").toFile().delete();
 	}
 }

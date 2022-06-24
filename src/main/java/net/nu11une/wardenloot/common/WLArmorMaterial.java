@@ -7,11 +7,12 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Lazy;
+import net.nu11une.wardenloot.WardenLoot;
 import net.nu11une.wardenloot.register.WLItems;
-import net.nu11une.wardenloot.util.ModConfigs;
+import net.nu11une.wardenloot.util.ModConfig;
 
 public enum WLArmorMaterial implements ArmorMaterial {
-    SCULKERITE("sculkerite", 43, new int[]{ModConfigs.BASE_ARMOR_PROTECTION, (3 + ModConfigs.BASE_ARMOR_PROTECTION), (6 + ModConfigs.BASE_ARMOR_PROTECTION), ModConfigs.BASE_ARMOR_PROTECTION}, 15, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, ModConfigs.ARMOR_TOUGHNESS, 0.15F, () -> {
+    SCULKERITE("sculkerite", 43, new int[]{WardenLoot.config.stats.armorBaseProtection, (3 + WardenLoot.config.stats.armorBaseProtection), (6 + WardenLoot.config.stats.armorBaseProtection), WardenLoot.config.stats.armorBaseProtection}, 15, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, WardenLoot.config.stats.armorToughness, 0.15F, () -> {
         return Ingredient.ofItems(WLItems.SCULK_INGOT);
     });
     private static final int[] BASE_DURABILITY = new int[]{13, 15, 16, 11};

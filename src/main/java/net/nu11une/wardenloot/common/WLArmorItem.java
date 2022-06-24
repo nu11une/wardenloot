@@ -7,8 +7,9 @@ import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
+import net.nu11une.wardenloot.WardenLoot;
 import net.nu11une.wardenloot.register.WLHelmet;
-import net.nu11une.wardenloot.util.ModConfigs;
+import net.nu11une.wardenloot.util.ModConfig;
 import net.nu11une.wardenloot.util.WLToolTip;
 import org.jetbrains.annotations.Nullable;
 
@@ -21,7 +22,7 @@ public class WLArmorItem extends ArmorItem {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        if(ModConfigs.REGISTER_HELMET_LEGGINGS_BOOTS){
+        if(WardenLoot.config.registry.registerHelmetLeggingsBoots){
             tooltip.add(WLToolTip.WARDEN_SET_BONUS);
         } else {
             tooltip.add(WLToolTip.WARDEN_BONUS);

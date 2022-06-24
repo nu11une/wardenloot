@@ -24,6 +24,9 @@
     ],
     "client": [
       "net.nu11une.wardenloot.client.WardenLootClient"
+    ],
+    "modmenu": [
+      "net.nu11une.wardenloot.compatibility.ModMenu"
     ]
   },
   "mixins": [
@@ -35,9 +38,11 @@
     "fabric": "*",
     "minecraft": "~1.19",
     "java": ">=17",
-    "moremcmeta": "1.19-3.0.3"
+    "moremcmeta": "1.19-3.0.3",
+    "cloth-config2": ">=7.0.72"
   },
   "suggests": {
-    "another-mod": "*"
+    "trinkets": ">=3.4.0",
+    "modmenu": ">=4.0.0"
   }
 }

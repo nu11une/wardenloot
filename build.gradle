@@ -21,6 +21,7 @@ repositories {
 		name = 'Ladysnake Mods'
 		url = 'https://ladysnake.jfrog.io/artifactory/mods'
 	}
+	maven { url "https://maven.shedaniel.me/" }
 }
 
 dependencies {
@@ -32,10 +33,13 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	// Animated armor dependency
 	modImplementation "curse.maven:moremcmeta-506079:${project.moremcmeta_version}"
 	modImplementation "curse.maven:trinkets-341284:${project.trinkets_version}"
 	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-api:5.0.0-beta.1"
+	modImplementation "curse.maven:modmenu-308702:${project.modmenu_version}"
+	modApi("me.shedaniel.cloth:cloth-config-fabric:${project.clothconfig_version}") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
 }
 
 processResources {

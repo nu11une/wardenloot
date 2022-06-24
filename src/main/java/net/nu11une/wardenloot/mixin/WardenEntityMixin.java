@@ -1,19 +1,15 @@
 package net.nu11une.wardenloot.mixin;
 
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.brain.MemoryModuleType;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Unit;
-import net.minecraft.world.World;
-import net.minecraft.world.event.listener.VibrationListener;
+import net.nu11une.wardenloot.WardenLoot;
 import net.nu11une.wardenloot.common.WLArmorItem;
-import net.nu11une.wardenloot.util.ModConfigs;
+import net.nu11une.wardenloot.util.ModConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -28,10 +24,10 @@ public abstract class WardenEntityMixin {
         if(warden.getDamageTracker().getBiggestAttacker() != target && target instanceof PlayerEntity){
             int armorCount = 0;
             int armorTotal = 0;
-            if(ModConfigs.REGISTER_CHESTPLATE){
+            if(WardenLoot.config.registry.registerChestplate){
                 armorTotal +=1;
             }
-            if(ModConfigs.REGISTER_HELMET_LEGGINGS_BOOTS){
+            if(WardenLoot.config.registry.registerHelmetLeggingsBoots){
                 armorTotal += 3;
             }
             for (ItemStack stack : target.getArmorItems()) {

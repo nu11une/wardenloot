@@ -23,7 +23,7 @@ public class WLLootTableModifier {
 
     public static void registerWLLootPools() {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-            if (EntityType.WARDEN.getLootTableId().equals(id) && ModConfigs.WARDEN_DROPS) {
+            if (EntityType.WARDEN.getLootTableId().equals(id) && WardenLoot.config.lootTables.wardenDropsModLoot) {
                 LootPool.Builder heartPool = LootPool.builder().with(ItemEntry.builder(WLWardenHeart.WARDEN_HEART));
                 LootPool.Builder soulPool = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(BinomialLootNumberProvider.create(12, 0.5F));
                 LootPool.Builder soulPoolBonus = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(ConstantLootNumberProvider.create(4));
@@ -31,11 +31,11 @@ public class WLLootTableModifier {
                 tableBuilder.pool(soulPool);
                 tableBuilder.pool(soulPoolBonus);
             }
-            if(Blocks.SCULK.getLootTableId().equals(id) && ModConfigs.SCULK_DROPS_SOUL) {
-                LootPool.Builder pool = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(BinomialLootNumberProvider.create(1, ModConfigs.SCULK_SOUL_DROP_CHANCE));
+            if(Blocks.SCULK.getLootTableId().equals(id) && WardenLoot.config.lootTables.sculkDropsSoul) {
+                LootPool.Builder pool = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(BinomialLootNumberProvider.create(1, WardenLoot.config.lootTables.soulChanceFromSculk));
                 tableBuilder.pool(pool);
             }
-            if(AC_CHEST_ID.equals(id) && ModConfigs.ANCIENT_CITY_HAS_MOD_LOOT) {
+            if(AC_CHEST_ID.equals(id) && WardenLoot.config.lootTables.ancientCityHasModLoot) {
                 LootPool.Builder ingotPool = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_INGOT)).conditionally(RandomChanceLootCondition.builder(0.06F));
                 LootPool.Builder soulPool = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(BinomialLootNumberProvider.create(4, 0.08F));
                 LootPool.Builder enchantPool = LootPool.builder().with(ItemEntry.builder(Items.BOOK).apply(new EnchantRandomlyLootFunction.Builder().add(WLEnchants.WARDEN_DAMAGE))).rolls(BinomialLootNumberProvider.create(3, 0.03F));
@@ -43,11 +43,11 @@ public class WLLootTableModifier {
                 tableBuilder.pool(soulPool);
                 tableBuilder.pool(enchantPool);
             }
-            if(AC_CHEST_ID.equals(id) && WardenLoot.isModLoaded("trinkets") && ModConfigs.ANCIENT_CITY_HAS_MOD_LOOT) {
+            if(AC_CHEST_ID.equals(id) && WardenLoot.isModLoaded("trinkets") && WardenLoot.config.lootTables.ancientCityHasModLoot) {
                 LootPool.Builder pool = LootPool.builder().with(ItemEntry.builder(WLTrinketItems.WARDEN_EARS_TRINKET)).conditionally(RandomChanceLootCondition.builder(0.02F));
                 tableBuilder.pool(pool);
             }
-            if (EntityType.WARDEN.getLootTableId().equals(id) && WardenLoot.isModLoaded("trinkets") && ModConfigs.WARDEN_DROPS) {
+            if (EntityType.WARDEN.getLootTableId().equals(id) && WardenLoot.isModLoaded("trinkets") && WardenLoot.config.lootTables.wardenDropsModLoot) {
                 LootPool.Builder pool = LootPool.builder().with(ItemEntry.builder(WLTrinketItems.WARDEN_EARS_TRINKET)).rolls(BinomialLootNumberProvider.create(1, 0.3F));
                 tableBuilder.pool(pool);
             }
