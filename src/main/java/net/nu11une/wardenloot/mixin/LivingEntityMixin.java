@@ -60,11 +60,13 @@ public abstract class LivingEntityMixin extends Entity {
 
     public void setEffect() {
         LivingEntity entity = (LivingEntity) (Object) this;
-        if(entity instanceof PlayerEntity){
-            for (ItemStack stack : entity.getArmorItems()) {
-                Item item = stack.getItem();
-                if (item.equals(WLHelmet.SCULK_HELMET)) {
-                    entity.removeStatusEffect(StatusEffects.DARKNESS);
+        if(WardenLoot.config.registry.registerHelmetLeggingsBoots){
+            if(entity instanceof PlayerEntity){
+                for (ItemStack stack : entity.getArmorItems()) {
+                    Item item = stack.getItem();
+                    if (item.equals(WLHelmet.SCULK_HELMET)) {
+                        entity.removeStatusEffect(StatusEffects.DARKNESS);
+                    }
                 }
             }
         }

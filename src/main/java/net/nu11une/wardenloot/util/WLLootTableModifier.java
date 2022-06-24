@@ -24,10 +24,12 @@ public class WLLootTableModifier {
     public static void registerWLLootPools() {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
             if (EntityType.WARDEN.getLootTableId().equals(id) && WardenLoot.config.lootTables.wardenDropsModLoot) {
-                LootPool.Builder heartPool = LootPool.builder().with(ItemEntry.builder(WLWardenHeart.WARDEN_HEART));
+                if(WardenLoot.config.registry.registerHelmetLeggingsBoots || WardenLoot.config.registry.registerChestplate){
+                    LootPool.Builder heartPool = LootPool.builder().with(ItemEntry.builder(WLWardenHeart.WARDEN_HEART));
+                    tableBuilder.pool(heartPool);
+                }
                 LootPool.Builder soulPool = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(BinomialLootNumberProvider.create(12, 0.5F));
                 LootPool.Builder soulPoolBonus = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(ConstantLootNumberProvider.create(4));
-                tableBuilder.pool(heartPool);
                 tableBuilder.pool(soulPool);
                 tableBuilder.pool(soulPoolBonus);
             }

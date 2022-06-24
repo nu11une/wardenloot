@@ -24,11 +24,11 @@ public class WLArmorItem extends ArmorItem {
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         if(WardenLoot.config.registry.registerHelmetLeggingsBoots){
             tooltip.add(WLToolTip.WARDEN_SET_BONUS);
+            if(stack.getItem().equals(WLHelmet.SCULK_HELMET)){
+                tooltip.add(WLToolTip.DARKNESS_IMMUNITY_BONUS);
+            }
         } else {
             tooltip.add(WLToolTip.WARDEN_BONUS);
-        }
-        if(stack.getItem().equals(WLHelmet.SCULK_HELMET)){
-            tooltip.add(WLToolTip.DARKNESS_IMMUNITY_BONUS);
         }
     }
 }

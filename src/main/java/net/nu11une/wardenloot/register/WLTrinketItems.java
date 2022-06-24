@@ -16,6 +16,6 @@ public class WLTrinketItems {
     }
 
     static {
-        WARDEN_EARS_TRINKET = new WardenEarsItem(new FabricItemSettings().group(WardenLoot.WL_GROUP).rarity(Rarity.UNCOMMON));
+        WARDEN_EARS_TRINKET = new WardenEarsItem(new FabricItemSettings().group(WardenLoot.WL_GROUP).rarity(Rarity.UNCOMMON).maxCount(1));
     }
 }

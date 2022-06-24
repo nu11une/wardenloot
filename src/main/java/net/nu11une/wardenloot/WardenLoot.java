@@ -18,10 +18,11 @@ public class WardenLoot implements ModInitializer {
 	public static final String MOD_ID = "wardenloot";
 	public static final Logger LOGGER = LoggerFactory.getLogger("AIOTs Expanded");
 	public static ModConfig config;
+	public static ItemStack iconStack;
 
 	public static final ItemGroup WL_GROUP = FabricItemGroupBuilder.build(
 			new Identifier(MOD_ID, "wardenloot_group"),
-			() -> new ItemStack(WLChestplate.SCULK_CHESTPLATE));
+			() -> iconStack);
 
 
 	public static boolean isModLoaded(String modId) {
@@ -31,6 +32,11 @@ public class WardenLoot implements ModInitializer {
 	public void onInitialize() {
 		AutoConfig.register(ModConfig.class, JanksonConfigSerializer::new);
 		config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+		if(config.registry.registerChestplate){
+			iconStack = new ItemStack(WLChestplate.SCULK_CHESTPLATE);
+		} else {
+			iconStack = new ItemStack(WLItems.SCULK_INGOT);
+		}
 		WLLootTableModifier.registerWLLootPools();
 		if(config.registry.registerTools){
 			WLTools.registerTools();
