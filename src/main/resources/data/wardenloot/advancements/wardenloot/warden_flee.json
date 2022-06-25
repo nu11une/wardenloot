@@ -1,0 +1,35 @@
+{
+  "parent": "wardenloot:wardenloot/warden_heart",
+  "criteria": {
+    "used_chestplate": {
+      "conditions": {
+        "item": {
+          "items": [
+            "wardenloot:sculk_chestplate"
+          ]
+        }
+      },
+      "trigger": "minecraft:used_totem"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.wardenloot.warden_flee.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "wardenloot:sculk_chestplate"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.wardenloot.warden_flee.title"
+    }
+  },
+  "requirements": [
+    [
+      "used_chestplate"
+    ]
+  ]
+}

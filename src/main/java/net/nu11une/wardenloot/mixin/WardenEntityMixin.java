@@ -1,15 +1,17 @@
 package net.nu11une.wardenloot.mixin;
 
+import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.brain.MemoryModuleType;
 import net.minecraft.entity.mob.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Unit;
 import net.nu11une.wardenloot.WardenLoot;
 import net.nu11une.wardenloot.common.WLArmorItem;
-import net.nu11une.wardenloot.util.ModConfig;
+import net.nu11une.wardenloot.register.WLChestplate;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -39,6 +41,9 @@ public abstract class WardenEntityMixin {
             if(armorCount == armorTotal && armorCount > 0) {
                 warden.removeSuspect(target);
                 warden.getBrain().remember(MemoryModuleType.DIG_COOLDOWN, Unit.INSTANCE, 0L);
+                if(target instanceof ServerPlayerEntity){
+                    Criteria.USED_TOTEM.trigger((ServerPlayerEntity) target, new ItemStack(WLChestplate.SCULK_CHESTPLATE));
+                }
             }
         }
     }

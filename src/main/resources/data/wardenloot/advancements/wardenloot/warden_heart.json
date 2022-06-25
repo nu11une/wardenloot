@@ -1,0 +1,37 @@
+{
+  "criteria": {
+    "warden_heart": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "wardenloot:warden_heart"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.wardenloot.warden_heart.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "wardenloot:warden_heart"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.wardenloot.warden_heart.title"
+    },
+    "background" : "minecraft:textures/block/sculk_catalyst_top.png"
+  },
+  "requirements": [
+    [
+      "warden_heart"
+    ]
+  ]
+}

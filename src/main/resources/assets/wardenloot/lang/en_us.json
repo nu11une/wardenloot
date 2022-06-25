@@ -46,5 +46,11 @@
   "text.autoconfig.wardenloot.option.lootTables.wardenDropsModLoot": "The Warden Drops Warden Loot Items",
   "text.autoconfig.wardenloot.option.lootTables.wardenKillsDropSoul": "Mobs That The Warden Kills Have a Chance to Drop Consumed Souls",
   "text.autoconfig.wardenloot.option.misc.trinketCosmeticOnly": "Warden Tendrils Trinket is Cosmetic Only",
-  "text.autoconfig.wardenloot.option.misc.trinketRangeMultiplier": "Warden Tendrils Trinket Range Multiplier"
+  "text.autoconfig.wardenloot.option.misc.trinketRangeMultiplier": "Warden Tendrils Trinket Range Multiplier",
+  "advancements.wardenloot.warden_flee.description": "Wear the full Depth-Keeper's Armor Set and cause the Warden to flee",
+  "advancements.wardenloot.warden_flee.title": "Scourge of the Depths",
+  "advancements.wardenloot.warden_heart.description": "Slay the Warden and take its heart",
+  "advancements.wardenloot.warden_heart.title": "Bane of the Depth-Keeper",
+  "advancements.wardenloot.chestplate_undying.description": "Survive fatal damage by using a Heartplate's heart",
+  "advancements.wardenloot.chestplate_undying.title": "Supercardia"
 }

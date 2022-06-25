@@ -22,6 +22,7 @@ repositories {
 		url = 'https://ladysnake.jfrog.io/artifactory/mods'
 	}
 	maven { url "https://maven.shedaniel.me/" }
+	maven { url = "https://minecraft.guntram.de/maven/" }
 }
 
 dependencies {
@@ -37,6 +38,8 @@ dependencies {
 	modImplementation "curse.maven:trinkets-341284:${project.trinkets_version}"
 	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-api:5.0.0-beta.1"
 	modImplementation "curse.maven:modmenu-308702:${project.modmenu_version}"
+	//modImplementation "de.guntram.mcmod:crowdin-translate:1.2"
+	//include "de.guntram.mcmod:crowdin-translate:1.2"
 	modApi("me.shedaniel.cloth:cloth-config-fabric:${project.clothconfig_version}") {
 		exclude(group: "net.fabricmc.fabric-api")
 	}

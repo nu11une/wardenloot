@@ -98,7 +98,7 @@ public abstract class LivingEntityMixin extends Entity {
                 if (livingEntity instanceof ServerPlayerEntity) {
                     ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity)livingEntity;
                     serverPlayerEntity.incrementStat(Stats.USED.getOrCreateStat(WLChestplate.SCULK_CHESTPLATE));
-                    Criteria.USED_TOTEM.trigger(serverPlayerEntity, itemStack);
+                    Criteria.USED_TOTEM.trigger(serverPlayerEntity, new ItemStack(WLChestplate.SCULK_CHESTPLATE_UNCHARGED));
                 }
 
                 livingEntity.setHealth(1.0F);
