@@ -30,7 +30,14 @@ A **Warden Heart** can be obtained in two ways:
 
 <img src="https://media.discordapp.net/attachments/597633988802117642/986801657331466300/armor_crafting.png" width="350"/>
 
-Wearing the **Depth-Keeper's Helmet** will give you immunity to Darkness, wearing the full **Depth-Keeper's Armor Set** will give you the **Scourge of the Depths** bonus, making the Warden fear you.
+- Wearing the **Depth-Keeper's Helmet** will give you immunity to Darkness
+- The **Depth-Keeper's Heartplate** will act as a rechargeable Totem of Undying; Receiving fatal damage while wearing the Heartplate will cause its heart to stop beating and will prevent you from dying. In this state, the Heartplate will provide less Protection and Knockback resistance. You can make the heart beat again by repairing the chestplate with Warden Blood in a smithing table. 
+- Wearing the full **Depth-Keeper's Armor Set** will give you the **Scourge of the Depths** bonus, making the Warden fear you.
+
+### Warden Blood
+**Warden Blood** is used to make a **Still Heartplate's** heart beat again. You can craft **Warden Blood** by surrounding a **Warden Heart** on four sides with Glass Bottles in a crafting table.
+
+<img src="https://media.discordapp.net/attachments/597633988802117642/990124922208677908/bloodchest.png" width="350"/>
 
 ### Bane of the Depth-Keeper
 The **Bane of the Depth-Keeper** enchantment can be obtained in two ways:
