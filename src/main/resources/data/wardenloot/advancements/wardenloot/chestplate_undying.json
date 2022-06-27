@@ -5,7 +5,7 @@
       "conditions": {
         "item": {
           "items": [
-            "sculk_chestplate_uncharged"
+            "wardenloot:sculk_chestplate_uncharged"
           ]
         }
       },
