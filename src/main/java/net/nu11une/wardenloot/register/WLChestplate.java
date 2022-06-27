@@ -26,8 +26,15 @@ public class WLChestplate {
     }
 
     static {
-        SCULK_CHESTPLATE = new WLArmorItem(WLArmorMaterial.SCULKERITE, EquipmentSlot.CHEST, new FabricItemSettings().fireproof().group(WardenLoot.WL_GROUP));
+        SCULK_CHESTPLATE = new WLArmorItem(getMaterial(), EquipmentSlot.CHEST, new FabricItemSettings().fireproof().group(WardenLoot.WL_GROUP));
         SCULK_CHESTPLATE_UNCHARGED = new WLArmorItem(WLArmorMaterial.SCULKERITE_UNCHARGED, EquipmentSlot.CHEST, new FabricItemSettings().fireproof());
         WARDEN_BLOOD = new Item(new FabricItemSettings().group(WardenLoot.WL_GROUP).rarity(Rarity.UNCOMMON).recipeRemainder(Items.GLASS_BOTTLE));
+    }
+
+    public static WLArmorMaterial getMaterial() {
+        if(WardenLoot.isModLoaded("lambdynlights")){
+            return WLArmorMaterial.SCULKERITE_COMPAT;
+        }
+        return WLArmorMaterial.SCULKERITE;
     }
 }
