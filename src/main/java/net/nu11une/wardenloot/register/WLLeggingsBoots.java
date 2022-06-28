@@ -19,6 +19,6 @@ public class WLLeggingsBoots {
 
     static {
         SCULK_LEGGINGS = new WLArmorItem(WLArmorMaterial.SCULKERITE, EquipmentSlot.LEGS, new FabricItemSettings().fireproof().group(WardenLoot.WL_GROUP));
-        SCULK_BOOTS = new WLArmorItem(WLArmorMaterial.SCULKERITE, EquipmentSlot.FEET, new FabricItemSettings().fireproof().group(WardenLoot.WL_GROUP));
+        SCULK_BOOTS = new WLArmorItem(WLChestplate.getMaterial(), EquipmentSlot.FEET, new FabricItemSettings().fireproof().group(WardenLoot.WL_GROUP));
     }
 }

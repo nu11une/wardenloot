@@ -17,6 +17,6 @@ public class WLHelmet {
     }
 
     static {
-        SCULK_HELMET = new WLArmorItem(WLArmorMaterial.SCULKERITE, EquipmentSlot.HEAD, new FabricItemSettings().fireproof().group(WardenLoot.WL_GROUP));
+        SCULK_HELMET = new WLArmorItem(WLChestplate.getMaterial(), EquipmentSlot.HEAD, new FabricItemSettings().fireproof().group(WardenLoot.WL_GROUP));
     }
 }
