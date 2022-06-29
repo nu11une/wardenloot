@@ -33,7 +33,7 @@ public class EntityMixin {
                         double entityY = entity.getY();
                         double entityZ = entity.getZ();
                         if(Math.abs(Math.abs(playerX) - Math.abs(entityX)) < distance && Math.abs(Math.abs(playerY) - Math.abs(entityY)) < distance && Math.abs(Math.abs(playerZ) - Math.abs(entityZ)) < distance){
-                            livingEntity.setStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 60, 1, false, false, false), player);
+                            livingEntity.setStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 60, 0, false, false, false), player);
                         }
                     }
                 }
