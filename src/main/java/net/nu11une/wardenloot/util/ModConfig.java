@@ -54,5 +54,7 @@ public class ModConfig implements ConfigData {
     public static class Misc {
         public boolean trinketCosmeticOnly = false;
         public float trinketRangeMultiplier = 1;
+        @Comment("Set this to false if the armor animation is failing due to an incompatibility")
+        public boolean animateArmor = true;
     }
 }
