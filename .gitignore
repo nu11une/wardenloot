@@ -1,22 +1,62 @@
 # gradle
 
-.gradle/
-build/
+fabric/.gradle/
+fabric/build/
+fabric/out/
+fabric/classes/
+
+forge/build
+forge/.gradle
+
+build
+.gradle
 out/
 classes/
 
 # eclipse
 
+fabric/*.launch
+
+forge/bin
+forge/*.launch
+forge/.settings
+forge/.metadata
+forge/.classpath
+forge/.project
+
+bin
 *.launch
+.settings
+.metadata
+.classpath
+.project
 
 # idea
 
-.idea/
-*.iml
+fabric/.idea/
+fabric/*.iml
+fabric/*.ipr
+fabric/*.iws
+
+out
 *.ipr
 *.iws
+*.iml
+.idea
+
+forge/out
+forge/*.ipr
+forge/*.iws
+forge/*.iml
+forge/.idea
 
 # vscode
+
+fabric/.settings/
+fabric/.vscode/
+fabric/bin/
+fabric/.classpath
+fabric/.project
 
 .settings/
 .vscode/
@@ -26,8 +66,24 @@ bin/
 
 # macos
 
+fabric/*.DS_Store
+
 *.DS_Store
 
 # fabric
 
-run/
+fabric/run/
+
+run
+
+# other
+forge/eclipse
+forge/run
+
+eclipse
+run
+
+# Files from Forge MDK
+forge/forge*changelog.txt
+
+forge*changelog.txt

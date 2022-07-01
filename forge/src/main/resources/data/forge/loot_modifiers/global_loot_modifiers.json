@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "entries": [
+    "wardenlootforge:ancient_city_loot_modifier",
+    "wardenlootforge:sculk_block_loot_modifier",
+    "wardenlootforge:warden_loot_modifier"
+  ]
+}

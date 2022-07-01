@@ -1,0 +1,38 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "wardenlootforge:item/warden_ears_trinket"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"scale": [1.2, 1.2, 1.2]
+		},
+		"thirdperson_lefthand": {
+			"scale": [1.2, 1.2, 1.2]
+		},
+		"firstperson_righthand": {
+			"translation": [0, 1.75, 0],
+			"scale": [1.1, 1.1, 1.1]
+		},
+		"firstperson_lefthand": {
+			"translation": [0, 1.75, 0],
+			"scale": [1.1, 1.1, 1.1]
+		},
+		"ground": {
+			"translation": [0, 0.5, 0],
+			"scale": [1.2, 1.2, 1.2]
+		},
+		"gui": {
+			"scale": [1.4, 1.4, 1.4]
+		},
+		"head": {
+			"rotation": [0, 0, -180],
+			"translation": [0, -20, 0],
+			"scale": [2, 2, 1]
+		},
+		"fixed": {
+			"scale": [1.5, 1.5, 1.5]
+		}
+	}
+}

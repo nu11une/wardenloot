@@ -1,0 +1,10 @@
+{
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:blocks/sculk"
+    }
+  ],
+  "addition": "wardenlootforge:warden_heart",
+  "type": "wardenlootforge:sculk_block_loot_modifier"
+}

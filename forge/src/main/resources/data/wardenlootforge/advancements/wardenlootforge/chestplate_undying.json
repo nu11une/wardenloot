@@ -1,0 +1,35 @@
+{
+  "parent": "wardenlootforge:wardenlootforge/warden_heart",
+  "criteria": {
+    "used_chestplate": {
+      "conditions": {
+        "item": {
+          "items": [
+            "wardenlootforge:sculk_chestplate_uncharged"
+          ]
+        }
+      },
+      "trigger": "minecraft:used_totem"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.wardenlootforge.chestplate_undying.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "wardenlootforge:sculk_chestplate_uncharged"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.wardenlootforge.chestplate_undying.title"
+    }
+  },
+  "requirements": [
+    [
+      "used_chestplate"
+    ]
+  ]
+}

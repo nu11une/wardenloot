@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "wardenlootforge:sculk_ingot"
+    },
+    "$": {
+      "item": "minecraft:diamond"
+    },
+    "@": {
+      "item": "minecraft:echo_shard"
+    }
+  },
+  "pattern": [
+    "@#@",
+    "#$#",
+    "@#@"
+  ],
+  "result": {
+    "item": "wardenlootforge:warden_heart"
+  }
+}
