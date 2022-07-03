@@ -19,7 +19,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
     SCULKERITE_COMPAT("sculkerite_compat", 43, new int[]{Settings.protection, Settings.protection + 3, Settings.protection + 6, Settings.protection}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, Settings.toughness, 0.15F, () -> {
         return Ingredient.of(ModItems.SCULK_INGOT.get());
     }),
-    SCULKERITE_UNCHARGED("sculkerite_uncharged", 43, new int[]{8, 8, Settings.protection, 8}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, Settings.toughness % 2, 0.05F, () -> {
+    SCULKERITE_UNCHARGED("sculkerite_uncharged", 43, new int[]{8, 8, Settings.protection, 8}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, Settings.toughness / 2, 0.05F, () -> {
         return Ingredient.of(ModItems.SCULK_INGOT.get());
     });
 
