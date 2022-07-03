@@ -64,6 +64,5 @@ public class WardenLoot implements ModInitializer {
 			WLTrinketItems.registerTrinketItems();
 		}
 		LOGGER.info("["+MOD_ID+"] Mod Initialized");
-		FabricLoader.getInstance().getConfigDir().resolve("wardenloot.properties").toFile().delete();
 	}
 }

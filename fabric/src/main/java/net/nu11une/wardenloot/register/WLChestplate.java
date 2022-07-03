@@ -32,7 +32,7 @@ public class WLChestplate {
     }
 
     public static WLArmorMaterial getMaterial() {
-        if(WardenLoot.isModLoaded("lambdynlights") || !WardenLoot.config.misc.animateArmor){
+        if(!WardenLoot.config.misc.animateArmor){
             return WLArmorMaterial.SCULKERITE_COMPAT;
         }
         return WLArmorMaterial.SCULKERITE;
