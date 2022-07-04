@@ -20,6 +20,8 @@ The intended way to obtain the items in this mod is to kill The Warden (hence th
 <img src="https://media.discordapp.net/attachments/597633988802117642/986801681058652160/imbued_ingot_craft.png" width="350"/>
 
 **Imbued Ingots** can be combined with Netherite tools to make **Imbued Tools**
+- The **Imbued Sword** and **Imbued Axe** inflict Darkness
+- The **Imbued Pickaxe** is more effective when mining Deepslate blocks - *finally deepslate can be insta-mined!*
 
 <img src="https://media.discordapp.net/attachments/597633988802117642/986801626339737640/tool_crafting.png" width="350"/>
 
