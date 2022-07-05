@@ -7,7 +7,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.nu11une.wardenloot.WardenLoot;
-import net.nu11une.wardenloot.util.ModConfig;
+import net.nu11une.wardenloot.util.SoundHelper;
 import net.nu11une.wardenloot.util.TrinketHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -25,18 +25,32 @@ public class EntityMixin {
                 LivingEntity livingEntity = (LivingEntity) (Object) this;
                 for (PlayerEntity player : livingEntity.world.getPlayers()) {
                     if(TrinketHelper.hasWardenTrinket(player)){
-                        float distance = volume * 15.5F * WardenLoot.config.misc.trinketRangeMultiplier;
-                        double playerX = player.getX();
-                        double playerY = player.getY();
-                        double playerZ = player.getZ();
-                        double entityX = entity.getX();
-                        double entityY = entity.getY();
-                        double entityZ = entity.getZ();
-                        if(Math.abs(Math.abs(playerX) - Math.abs(entityX)) < distance && Math.abs(Math.abs(playerY) - Math.abs(entityY)) < distance && Math.abs(Math.abs(playerZ) - Math.abs(entityZ)) < distance){
-                            livingEntity.setStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 60, 0, false, false, false), player);
+                        float distance = sound.getDistanceToTravel(volume) * 0.9F * WardenLoot.config.misc.trinketRangeMultiplier;
+                        if(player.isInRange(entity, distance, distance * 0.7F)){
+                            if(WardenLoot.config.misc.trinketClientOnly){
+                                SoundHelper.entityMap.put(entity, 0);
+                                SoundHelper.distanceMap.put(entity, distance);
+                            } else {
+                                livingEntity.setStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 60, 0, false, false, false), player);
+                            }
                         }
                     }
                 }
+            }
+        }
+    }
+
+    @Inject(method = "tick", at = @At("HEAD"), cancellable = true)
+    public void tickCallback(CallbackInfo ci) {
+        Entity entity = (Entity) (Object) this;
+        if(SoundHelper.entityMap.containsKey(entity)){
+            int ticks = SoundHelper.entityMap.get(entity);
+            if(ticks >= 60){
+                SoundHelper.entityMap.remove(entity);
+                SoundHelper.distanceMap.remove(entity);
+            } else {
+                ticks++;
+                SoundHelper.entityMap.replace(entity, ticks);
             }
         }
     }

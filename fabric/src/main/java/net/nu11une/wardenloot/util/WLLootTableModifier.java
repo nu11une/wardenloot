@@ -5,6 +5,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
+import net.minecraft.loot.condition.KilledByPlayerLootCondition;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.EnchantRandomlyLootFunction;
@@ -25,13 +26,15 @@ public class WLLootTableModifier {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
             if (EntityType.WARDEN.getLootTableId().equals(id) && WardenLoot.config.lootTables.wardenDropsModLoot) {
                 if(WardenLoot.config.registry.registerHelmetLeggingsBoots || WardenLoot.config.registry.registerChestplate){
-                    LootPool.Builder heartPool = LootPool.builder().with(ItemEntry.builder(WLWardenHeart.WARDEN_HEART));
+                    LootPool.Builder heartPool = LootPool.builder().with(ItemEntry.builder(WLWardenHeart.WARDEN_HEART)).conditionally(KilledByPlayerLootCondition.builder());
                     tableBuilder.pool(heartPool);
                 }
-                LootPool.Builder soulPool = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(BinomialLootNumberProvider.create(12, 0.5F));
-                LootPool.Builder soulPoolBonus = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(ConstantLootNumberProvider.create(4));
+                LootPool.Builder soulPool = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(BinomialLootNumberProvider.create(12, 0.5F)).conditionally(KilledByPlayerLootCondition.builder());
+                LootPool.Builder soulPoolBonus = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(ConstantLootNumberProvider.create(3)).conditionally(KilledByPlayerLootCondition.builder());
+                LootPool.Builder soulPoolConstant = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(ConstantLootNumberProvider.create(1));
                 tableBuilder.pool(soulPool);
                 tableBuilder.pool(soulPoolBonus);
+                tableBuilder.pool(soulPoolConstant);
             }
             if(Blocks.SCULK.getLootTableId().equals(id) && WardenLoot.config.lootTables.sculkDropsSoul) {
                 LootPool.Builder pool = LootPool.builder().with(ItemEntry.builder(WLItems.SCULK_SOUL)).rolls(BinomialLootNumberProvider.create(1, WardenLoot.config.lootTables.soulChanceFromSculk));

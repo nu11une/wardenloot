@@ -24,6 +24,7 @@ public class Settings {
     public static boolean wardenLoot = tables.wardenDropsModLoot;
     public static boolean killLoot = tables.wardenKillsDropSoul;
     static ModConfig.Misc misc = WardenLootForge.config.misc;
+    public static boolean trinketClient = WardenLootForge.config.misc.trinketClientOnly;
     public static boolean cosmetic = misc.trinketCosmeticOnly;
     public static float range = misc.trinketRangeMultiplier;
     public static boolean animate = misc.animateArmor;

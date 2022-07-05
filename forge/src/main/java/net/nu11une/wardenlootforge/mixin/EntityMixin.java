@@ -9,6 +9,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.fml.ModList;
 import net.nu11une.wardenlootforge.WardenLootForge;
 import net.nu11une.wardenlootforge.util.Settings;
+import net.nu11une.wardenlootforge.util.SoundHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -24,18 +25,32 @@ public class EntityMixin {
                 LivingEntity livingEntity = (LivingEntity) (Object) this;
                 for (Player player : livingEntity.level.players()) {
                     if(WardenLootForge.tendrilEntities.contains(player) && !Settings.cosmetic){
-                        float distance = volume * 15F * Settings.range;
-                        double playerX = player.getX();
-                        double playerY = player.getY();
-                        double playerZ = player.getZ();
-                        double entityX = entity.getX();
-                        double entityY = entity.getY();
-                        double entityZ = entity.getZ();
-                        if(Math.abs(Math.abs(playerX) - Math.abs(entityX)) < distance && Math.abs(Math.abs(playerY) - Math.abs(entityY)) < distance && Math.abs(Math.abs(playerZ) - Math.abs(entityZ)) < distance){
-                            livingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 60, 1, false, false, false), player);
+                        float distance = sound.getRange(volume) * 0.9F * Settings.range;
+                        if(player.closerThan(entity, distance, distance * 0.7F)){
+                            if(Settings.trinketClient){
+                                SoundHelper.entityMap.put(entity, 0);
+                                SoundHelper.distanceMap.put(entity, distance);
+                            } else {
+                                livingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 60, 1, false, false, false), player);
+                            }
                         }
                     }
                 }
+            }
+        }
+    }
+
+    @Inject(method = "tick", at = @At("HEAD"), cancellable = true)
+    public void tickCallback(CallbackInfo ci){
+        Entity entity = (Entity) (Object) this;
+        if(SoundHelper.entityMap.containsKey(entity)){
+            int ticks = SoundHelper.entityMap.get(entity);
+            if(ticks >= 60){
+                SoundHelper.entityMap.remove(entity);
+                SoundHelper.distanceMap.remove(entity);
+            } else {
+                ticks++;
+                SoundHelper.entityMap.replace(entity, ticks);
             }
         }
     }

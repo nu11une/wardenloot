@@ -9,6 +9,7 @@
     "WardenMixin"
   ],
   "client": [
+    "MinecraftClientMixin",
     "ClientPacketListenerMixin"
   ],
   "injectors": {

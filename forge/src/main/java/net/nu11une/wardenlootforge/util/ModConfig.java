@@ -52,6 +52,8 @@ public class ModConfig implements ConfigData {
     public Misc misc = new Misc();
 
     public static class Misc {
+        @Comment("Setting this to false will make it so that only the player wearing the Tendrils trinket\nwill be able to see highlighted mobs, but it will also introduce some unsatisfying behavior\nlike 'ghost noises' where a mob is highlighted without making any noise\n(if anyone knows how to fix this pls let me know lol)")
+        public boolean trinketClientOnly = false;
         public boolean trinketCosmeticOnly = false;
         public float trinketRangeMultiplier = 1;
         @Comment("Set this to false if the armor animation is failing due to an incompatibility")
