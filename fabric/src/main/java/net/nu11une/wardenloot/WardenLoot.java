@@ -38,6 +38,7 @@ public class WardenLoot implements ModInitializer {
 			iconStack = new ItemStack(WLItems.SCULK_INGOT);
 		}
 		WLLootTableModifier.registerWLLootPools();
+		WLEffects.registerEffects();
 		if(config.registry.registerTools){
 			WLTools.registerTools();
 		}

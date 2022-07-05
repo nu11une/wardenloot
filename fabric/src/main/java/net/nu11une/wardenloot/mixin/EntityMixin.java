@@ -24,7 +24,7 @@ public class EntityMixin {
             if(entity instanceof LivingEntity){
                 LivingEntity livingEntity = (LivingEntity) (Object) this;
                 for (PlayerEntity player : livingEntity.world.getPlayers()) {
-                    if(TrinketHelper.hasWardenTrinket(player)){
+                    if(TrinketHelper.canEcholocate(player)){
                         float distance = sound.getDistanceToTravel(volume) * 0.9F * WardenLoot.config.misc.trinketRangeMultiplier;
                         if(player.isInRange(entity, distance, distance * 0.7F)){
                             if(WardenLoot.config.misc.trinketClientOnly){

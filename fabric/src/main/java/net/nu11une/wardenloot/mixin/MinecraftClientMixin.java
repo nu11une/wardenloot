@@ -21,7 +21,7 @@ public class MinecraftClientMixin {
         if(SoundHelper.entityMap.containsKey(entity) && SoundHelper.distanceMap.containsKey(entity)){
             assert this.player != null;
             float distance = SoundHelper.distanceMap.get(entity);
-            if(this.player.isInRange(entity, distance, distance * 0.7F) && TrinketHelper.hasWardenTrinket(this.player)){
+            if(this.player.isInRange(entity, distance, distance * 0.7F) && TrinketHelper.canEcholocate(this.player)){
                 cir.setReturnValue(true);
             }
         }

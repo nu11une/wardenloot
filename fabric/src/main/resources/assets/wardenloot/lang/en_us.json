@@ -55,5 +55,6 @@
   "advancements.wardenloot.warden_heart.description": "Slay the Warden and take its heart",
   "advancements.wardenloot.warden_heart.title": "Bane of the Depth-Keeper",
   "advancements.wardenloot.chestplate_undying.description": "Survive fatal damage by using a Heartplate's heart",
-  "advancements.wardenloot.chestplate_undying.title": "Supercardia"
+  "advancements.wardenloot.chestplate_undying.title": "Supercardia",
+  "effect.wardenloot.echolocate": "Echolocation"
 }
