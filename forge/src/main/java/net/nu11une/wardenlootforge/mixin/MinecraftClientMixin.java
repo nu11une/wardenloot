@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.world.entity.Entity;
 import net.nu11une.wardenlootforge.WardenLootForge;
+import net.nu11une.wardenlootforge.register.ModEffects;
 import net.nu11une.wardenlootforge.util.SoundHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -22,7 +23,7 @@ public class MinecraftClientMixin {
         if(SoundHelper.entityMap.containsKey(entity) && SoundHelper.distanceMap.containsKey(entity)){
             assert this.player != null;
             float distance = SoundHelper.distanceMap.get(entity);
-            if(this.player.closerThan(entity, distance, distance * 0.7F) && WardenLootForge.tendrilEntities.contains(this.player)){
+            if(this.player.closerThan(entity, distance, distance * 0.7F) && (WardenLootForge.tendrilEntities.contains(this.player)||this.player.hasEffect(ModEffects.ECHOLOCATE.get()))){
                 cir.setReturnValue(true);
             }
         }

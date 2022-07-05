@@ -35,6 +35,8 @@ public class WardenLootForge {
         AutoConfig.register(ModConfig.class, JanksonConfigSerializer::new);
         config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
 
+        ModEffects.register(modEventBus);
+
         if(Settings.tools){
             ModTools.register(modEventBus);
         }

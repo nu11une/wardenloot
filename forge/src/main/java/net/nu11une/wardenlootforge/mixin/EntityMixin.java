@@ -8,6 +8,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.fml.ModList;
 import net.nu11une.wardenlootforge.WardenLootForge;
+import net.nu11une.wardenlootforge.register.ModEffects;
 import net.nu11une.wardenlootforge.util.Settings;
 import net.nu11une.wardenlootforge.util.SoundHelper;
 import org.spongepowered.asm.mixin.Mixin;
@@ -24,7 +25,7 @@ public class EntityMixin {
             if(entity instanceof LivingEntity){
                 LivingEntity livingEntity = (LivingEntity) (Object) this;
                 for (Player player : livingEntity.level.players()) {
-                    if(WardenLootForge.tendrilEntities.contains(player) && !Settings.cosmetic){
+                    if((WardenLootForge.tendrilEntities.contains(player)||player.hasEffect(ModEffects.ECHOLOCATE.get())) && !Settings.cosmetic){
                         float distance = sound.getRange(volume) * 0.9F * Settings.range;
                         if(player.closerThan(entity, distance, distance * 0.7F)){
                             if(Settings.trinketClient){
