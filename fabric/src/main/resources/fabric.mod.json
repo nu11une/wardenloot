@@ -11,7 +11,8 @@
   "contact": {
     "sources": "https://github.com/nu11une/wardenloot",
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/warden-loot",
-    "issues": "https://github.com/nu11une/wardenloot/issues"
+    "issues": "https://github.com/nu11une/wardenloot/issues",
+    "discord": "https://discord.gg/MDN2njJGhT"
   },
 
   "license": "Apache-2.0",

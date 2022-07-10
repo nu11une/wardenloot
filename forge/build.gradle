@@ -21,7 +21,7 @@ plugins {
 }
 apply plugin: 'org.spongepowered.mixin'
 
-version = '1.0.8-1.19.x'
+version = '1.0.9-1.19.x'
 group = 'net.nu11une.wardenlootforge'
 archivesBaseName = 'wardenlootforge'
 
