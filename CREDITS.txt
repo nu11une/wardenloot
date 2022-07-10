@@ -4,3 +4,5 @@ CyberSteve777 - Partial Russian translation
 aperfectname - Dutch translation
 Lirian - German translation
 Flora - French Translation
+
+And thanks to Kaupenjoe and the Fabric discord server for tons of great help and tutorials :)
