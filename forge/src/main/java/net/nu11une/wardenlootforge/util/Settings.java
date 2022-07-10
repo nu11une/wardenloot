@@ -1,5 +1,6 @@
 package net.nu11une.wardenlootforge.util;
 
+import net.minecraftforge.fml.ModList;
 import net.nu11une.wardenlootforge.WardenLootForge;
 import net.nu11une.wardenlootforge.common.ModArmorMaterials;
 
@@ -30,7 +31,7 @@ public class Settings {
     public static boolean animate = misc.animateArmor;
 
     public static ModArmorMaterials getMaterial(){
-        if(!Settings.animate){
+        if(!Settings.animate || !ModList.get().isLoaded("moremcmeta")){
             return ModArmorMaterials.SCULKERITE_COMPAT;
         }
         return ModArmorMaterials.SCULKERITE;
