@@ -31,7 +31,7 @@ public class Settings {
     public static boolean animate = misc.animateArmor;
 
     public static ModArmorMaterials getMaterial(){
-        if(!Settings.animate || !ModList.get().isLoaded("moremcmeta")){
+        if(!animate){
             return ModArmorMaterials.SCULKERITE_COMPAT;
         }
         return ModArmorMaterials.SCULKERITE;

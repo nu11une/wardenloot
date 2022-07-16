@@ -10,5 +10,8 @@ public class WardenLootClient implements ClientModInitializer {
         if(WardenLoot.isModLoaded("trinkets")){
             TrinketRenderers.registerRenderers();
         }
+        if(!WardenLoot.isModLoaded("moremcmeta")){
+            WardenLoot.LOGGER.info("["+WardenLoot.MOD_ID+"] MoreMcmeta is not loaded. Please either install MoreMcmeta or disabled animated armor in the config");
+        }
     }
 }

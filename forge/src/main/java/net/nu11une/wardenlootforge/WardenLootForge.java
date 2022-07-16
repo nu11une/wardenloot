@@ -91,6 +91,9 @@ public class WardenLootForge {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            if(ModList.get().isLoaded("moremcmeta")){
+                LOGGER.info("["+MOD_ID+"] MoreMcmeta is not loaded. Please either install MoreMcmeta or disable animated armor in the config.");
+            }
         }
     }
 }
