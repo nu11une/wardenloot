@@ -3,7 +3,7 @@ loaderVersion="[41,)"
 license="Apache-2.0"
 [[mods]]
 modId="wardenlootforge"
-version="1.0.9-1.19.x"
+version="1.1.0-1.19.x"
 displayName="Warden Loot"
 logoFile="wardenloot_icon.png"
 authors="nu11une"
@@ -33,6 +33,6 @@ A configurable fabric mod that adds very powerful (and very hard to get) weapons
 [[dependencies.wardenlootforge]]
     modId="moremcmeta"
     mandatory=false
-    versionRange="[1.19-3.0.3,)"
+    versionRange="[1.19-3.0.5,)"
     ordering="NONE"
     side="CLIENT"
