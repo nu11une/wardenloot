@@ -41,7 +41,7 @@
     "cloth-config2": ">=7.0.72"
   },
   "suggests": {
-    "moremcmeta": ">=1.19-3.0.4",
+    "moremcmeta": ">=1.19-3.0.5",
     "trinkets": ">=3.4.0",
     "modmenu": ">=4.0.0"
   }
