@@ -3,7 +3,7 @@ loaderVersion="[41,)"
 license="Apache-2.0"
 [[mods]]
 modId="wardenlootforge"
-version="1.1.0-1.19.x"
+version="1.1.1-1.19.x"
 displayName="Warden Loot"
 logoFile="wardenloot_icon.png"
 authors="nu11une"
@@ -16,7 +16,7 @@ A configurable fabric mod that adds very powerful (and very hard to get) weapons
     # Does this dependency have to exist - if not, ordering below must be specified
     mandatory=true #mandatory
     # The version range of the dependency
-    versionRange="[41,)" #mandatory
+    versionRange="[41.0.94,)" #mandatory
     # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
     ordering="NONE"
     # Side this dependency is applied on - BOTH, CLIENT or SERVER

@@ -2,9 +2,8 @@
   "conditions": [
     {
       "condition": "forge:loot_table_id",
-      "loot_table_id": "minecraft:blocks/sculk"
+      "loot_table_id": "minecraft:chests/ancient_city"
     }
   ],
-  "addition": "wardenlootforge:warden_heart",
   "type": "wardenlootforge:ancient_city_loot_modifier"
 }

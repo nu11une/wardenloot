@@ -5,6 +5,5 @@
       "loot_table_id": "minecraft:entities/warden"
     }
   ],
-  "addition": "wardenlootforge:warden_heart",
   "type": "wardenlootforge:warden_loot_modifier"
 }

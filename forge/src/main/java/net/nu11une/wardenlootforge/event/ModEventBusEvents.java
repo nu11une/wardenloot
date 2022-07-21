@@ -17,13 +17,13 @@ public class ModEventBusEvents {
 
     @SubscribeEvent
     public static void registerModifierSerializers(@Nonnull final RegisterEvent event) {
-        event.register(ForgeRegistries.Keys.LOOT_MODIFIER_SERIALIZERS, helper -> {
+        event.register(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, helper -> {
             helper.register(new ResourceLocation(WardenLootForge.MOD_ID,"ancient_city_loot_modifier"),
-                    new AncientCityLootModifier.Serializer());
+                    AncientCityLootModifier.CODEC);
             helper.register(new ResourceLocation(WardenLootForge.MOD_ID,"sculk_block_loot_modifier"),
-                    new SculkBlockLootModifier.Serializer());
+                    SculkBlockLootModifier.CODEC);
             helper.register(new ResourceLocation(WardenLootForge.MOD_ID,"warden_loot_modifier"),
-                    new WardenLootModifier.Serializer());
+                    WardenLootModifier.CODEC);
         });
     }
 }
